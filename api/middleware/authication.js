@@ -1,1 +1,32 @@
-// auth users
+require('dotenv').config()
+const {sign} = require('jsonwebtoken')
+
+function createToken(user){
+    return sign({
+        userPass: user.userPass,
+        emailAdd: user.emailAdd
+    }, 
+    process.env.SECRET_KEY, {
+        expiresIn: '5h'
+    })
+}
+
+function verifyAToken(req, res, next){
+    //To prevent undefined error, place ?. before your property.       
+   try{
+        // Retrieve token from req.headers
+        console.log("Get token from req.headers['authorization']");
+        const token = req.headers["authorization"]
+        console.log(token);
+        next()
+   }catch(e){
+        res.json({
+            status: res.statusCode,
+            msg: e.message
+        })
+   }}
+
+module.exports = {
+    createToken,
+    verifyAToken
+}
