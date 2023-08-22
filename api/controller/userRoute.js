@@ -12,7 +12,7 @@ setRoute.get('/users',(req, res) =>{
 setRoute.get('/user/:id',(req, res) =>{
     user.fetchUser(req, res)
 })
-setRoute.post('/addNewUserp', bodyParser.json(), 
+setRoute.post('/addNewUser', bodyParser.json(), 
     (req, res)=>{
         user.addUser(req, res)
 })
@@ -37,7 +37,7 @@ setRoute.get('/products', (req, res)=>{
 setRoute.get('/product/:id',(req, res)=>{
     products.fetchProduct(req, res)
 })
-setRoute.post('/product',(req, res)=>{
+setRoute.post('/AddNewProduct',(req, res)=>{
     products.addProduct(req, res)
 })
 
