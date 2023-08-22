@@ -28,22 +28,45 @@ class User{
     })
 
     }
+    // addUser(req, res) {
+    //     const query = `
+    //       INSERT INTO users 
+    //       SET ?; 
+    //     `;
+        
+    //     dbConfig.query(query, (err) => {
+    //       if (err) throw err
+
+    //       res.json({
+    //         status: res.statusCode,
+    //         msg: "user was added"
+    //       })
+    //     })
+    //   }
+    
+
     addUser(req, res) {
+        const userData = req.body; // Assuming the request body contains user data
         const query = `
           INSERT INTO users 
           SET ?; 
         `;
         
-        dbConfig.query(query, (err) => {
-          if (err) throw err
-
-          res.json({
-            status: res.statusCode,
-            msg: "user was added"
-          })
-        })
+        dbConfig.query(query, userData, (err) => {
+          if (err) {
+            res.json({
+              status: res.statusCode,
+              msg: "Error adding user"
+            });
+          } else {
+            res.json({
+              status: res.statusCode,
+              msg: "User was added"
+            });
+          }
+        });
       }
-    
+      
     
       updateUser(req, res) {
         const userId = req.params.id;
