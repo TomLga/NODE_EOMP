@@ -2,4 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: #000;
+    color: white;
 }
+h1{
+    text-align: center;
+    text-decoration: underline;
+    font-family: cursive;
+    font-weight: 100;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+ 
+  }
+ #user{
+    margin-top: 40px;
+ }
+#prod{
+    margin-top: 40px;
+}
+#prod>h2, #user>h2{
+   text-align: center;
+}
+  .userTable{
+    display: flex;
+    justify-content: center;
+
+  }
