@@ -1,17 +1,9 @@
 <template>
-    <div>
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden"></span>
-          </div>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
-</template>
+  </template>
 
-<script>
-    export default {
-        
-    }
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+   

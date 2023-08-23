@@ -15,36 +15,52 @@ export default createStore({
   getters: {
   },
   mutations: {
-    setUsers(state,users) {
+    
+    setUsers(state, users) {
       state.users = users
     },
-    setUser(state,user){
-      state.user =user
+    setUser(state, user) {
+      state.user = user
     },
-    setProducts(state,products){
+    setProducts(state, products) {
       state.products = products
     },
-    setProduct(state, product){
-      state.product =  product
+    setProduct(state, product) {
+      state.product = product
     },
-    setSpinner(state, value){
+    setSpinner(state, value) {
       state.spinner = value
     },
-    setToken(state,token){
-      state.token =token
+    setToken(state, token) {
+      state.spinner = spinner
     },
-    setMsg(state,msg){
-      state.msg =msg
-    },
-  },
-  actions: {
-    async fetchUsers(context) {
-      try{
-        const {data} = await axios.get(`${cUrl}users`)
-        context.commit("setUsers", data.results)
-    }catch(e){
-      context.commit("setMsg", "An error occured")
+    setMsg(state, msg) {
+      state.msg = msg
     }
+  },
+
+  actions: {
+    async fetchProds(context) {
+      try {
+        const { data } = await axios.get(`${cUrl}products`);
+        context.commit("setProducts", data.results); 
+      } catch (e) {
+        context.commit("setMsg", "error occ");
+      }
     },
- 
-  }})
+    async fetchUsers(context) {
+      try {
+        const { data } = (await axios.get(`${cUrl}users`));
+        context.commit("setUsers", data.results); 
+      } catch (e) {
+        context.commit("setMsg", "error occ");
+      }
+    },
+
+
+  },
+  modules: {
+  }
+
+  
+})
