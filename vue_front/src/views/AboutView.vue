@@ -4,19 +4,21 @@
        <div class="row d_flex">
           <div class="col-md-5">
              <div class="about_img">
-                <figure><img src="images/about_img.png" alt="#"/></figure>
+                <figure><img id="abtImg" src="https://i.postimg.cc/k5x8780R/apple-watch.jpg" alt="profile"/></figure>
              </div>
           </div>
-          <div class="col-md-7">
+          <class class="col-md-7">
              <div class="titlepage">
-                <h2>About Our Shop</h2>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-             </div>
-             <a class="read_more" href="#">Read More</a>
-          </div>
-       </div>
-    </div>
- </div>
+                <h2>About Time Vogue</h2>
+                <p>Watch is a very popular and practical fashion accessory for men, women and kids. From high-end luxurious watches to reasonable regular watches, endless styles of watches are available in the market today.</p>
+                <p>Our watches are made for your wrists Crafted with Love💓 & Care . Beautifully designed at its best and are the World-class watch made for you. The Art of Watch is Here. Time changes, we don’t.</p>
+         </div>
+         </class>
+      </div>
+   </div>
+</div>
+
+
 </template>
 
 <script>
@@ -28,3 +30,16 @@
       }
 
 </script>
+
+<style>
+.titlepage{
+   border-radius: 0px 40px ;
+   box-shadow: inset -20px -20px blue ;
+
+}
+h2{
+text-shadow: 0px 3px 3px rgba(0, 0, 255, 0.556);
+text-align: center;
+}
+
+</style>
