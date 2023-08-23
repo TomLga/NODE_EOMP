@@ -34,7 +34,7 @@ setRoute.delete('/user/:id', (req, res)=>{
 setRoute.get('/products', (req, res)=>{
     products.fetchProducts(req, res)
 })
-setRoute.get('/product',(req, res)=>{
+setRoute.get('/product/:id',(req, res)=>{
     products.fetchProduct(req, res)
 })
 setRoute.post('/AddNewProduct',(req, res)=>{
