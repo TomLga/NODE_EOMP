@@ -20,20 +20,22 @@ class Product{
           });
         });
       }
+
       fetchProduct(req, res) {
+        const prodID = req.params.id; // Get the product ID from the request parameter
         const query = `
-        SELECT prodID, prodName,quantity, amount, category,prodUrl
-        FROM Products
-        WHERE prodID =?
+            SELECT prodID, prodName, quantity, amount, category, prodUrl
+            FROM Products
+            WHERE prodID = ?
         `;
-        dbConfig.query(query, (err, results) => {
-          if (err) throw err;
-          res.json({
-            status: res.statusCode,
-            results: results,
-          });
+        dbConfig.query(query, [prodID], (err, results) => { // Pass prodID as a parameter
+            if (err) throw err;
+            res.json({
+                status: res.statusCode,
+                results: results,
+            });
         });
-      }
+    }
     
     addProduct(req, res) {   
         const query = `
@@ -42,29 +44,75 @@ class Product{
         `;
       }
     
+
       updateProduct(req, res) {
         const prodID = req.params.id;
         const newProd = req.body;
         const query = `
-                UPDATE products
-                SET ? 
-                WHERE prodID = ?
-            `;
-        dbConfig.query(query, [newProd, prodID], (err) => {
+          UPDATE products
+          SET prodName = ?, 
+          quantity = ?, 
+          amount = ?, 
+          category = ?, 
+          prodUrl = ?
+          WHERE prodID = ?
+        `;
+        const values = [
+          newProd.prodName,
+          newProd.quantity,
+          newProd.amount,
+          newProd.category,
+          newProd.prodUrl,
+          prodID
+        ];
+        
+        dbConfig.query(query, values, (err) => {
           if (err) {
             res.json({
               status: res.statusCode,
-              msg: "Error updating Product",
+              msg: "Error Updating Product",
             });
           } else {
             res.json({
               status: res.statusCode,
-              msg: "product updated",
+              msg: "Product updated",
             });
           }
         });
       }
+      
+
+    //   updateProduct(req, res) {
+    //     const prodID = req.params.id;
+    //     const newProd = req.body;
+    //     const query = `
+    //         UPDATE products
+    //         SET prodName = ?, 
+    //             quantity = ?, 
+    //             amount = ?, 
+    //             category = ?, 
+    //             prodUrl = ?
+    //         WHERE prodID = ?
+    //     `;
+    //     const values = [newProd.prodName, newProd.quantity, newProd.amount, newProd.category, newProd.prodUrl, prodID];
     
+    //     dbConfig.query(query, values, (err) => {
+    //         if (err) {
+    //             res.json({
+    //                 status: res.statusCode,
+    //                 msg: "Error updating Product",
+    //             });
+    //         } else {
+    //             res.json({
+    //                 status: res.statusCode,
+    //                 msg: "Product updated",
+    //             });
+    //         }
+    //     });
+    // }
+    
+
+
       deleteProduct(req, res) {
         const query = `
             DELETE FROM Products
