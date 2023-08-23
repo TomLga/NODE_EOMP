@@ -82,8 +82,24 @@
 
 
 
-  
-  
+  <div class="container-fluid pt-5 pb-3">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+            <div class="card products-card" v-for="product in products" :key="product.id">
+              <img :src="products.image" class="card-img-top img-fluid" alt="">
+              <div class="card-body">
+                <h5 class="card-title">{{ products.name }}</h5>
+                <a :href="project.url" class="btn btn-primary ">Netlify</a>
+                <a :href="project.url1" class="btn btn-primary">Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+
 </template>
 
 <script>
