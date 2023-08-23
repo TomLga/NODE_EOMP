@@ -1,24 +1,43 @@
 <template>
-    <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Products</span></h2>
-        <div class="card-group">
-          <div class="card project-card" v-for="product in products" :key="product.id">
-            <img :src="product.image" class="card-img-top img-fluid" alt="">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.name }}</h5>
-              <a :href="SingleProductView.vue" class="btn btn-primary">Add to Cart</a>
-            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <h2>Products</h2>
+      <div class="col" v-if="products">
+        <div v-for="product in products" class="card" style="width: 18rem;" :key="product.productID">
+          <img :src="product.imageUrl" class="card-img-top" :alt="product.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.price }}</p>
+            <p class="card-text">{{ product.category }}</p>
+            <router-link :to="'/singleProduct/' + product.productID" class="btn btn-primary">Add to cart</router-link>
           </div>
         </div>
       </div>
+      <div v-else class="col"> 
+        <spinnerComp/>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script>
-    export default {
-        
-    }
+import SpinnerComp from "@/components/SpinnerComp"; 
+
+export default {
+  components: {
+    SpinnerComp,
+  },
+  data() {
+    return {
+      products: [
+
+      ],
+    };
+  },
+};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

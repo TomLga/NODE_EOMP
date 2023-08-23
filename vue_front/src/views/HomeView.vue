@@ -55,6 +55,30 @@
     </div>
 </div>
 
+<div class="card-group">
+  <div class="card">
+    <img src="https://i.postimg.cc/cJJJLYsm/Noise-Champ.jpg" class="card-img-top" alt="kids watch" style="width: 17rem; margin:auto">
+    <div class="card-body" >
+      <h5 class="card-price">R150</h5>
+      <button class="send_btn" type="button">See more</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://i.postimg.cc/V6rLj800/Tempo-Pulse-2-0-Smart-watch.jpg" class="card-img-top" alt="womans watch" style="width: 17rem; margin:auto">
+    <div class="card-body">
+      <h5 class="card-price">R999</h5>
+      <button class="send_btn" type="button">See more</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://i.postimg.cc/d0SVk13K/Volkano-Serene-Series.jpg" class="card-img-top" alt="mans watch" style="width: 17rem; margin:auto">
+    <div class="card-body">
+      <h5 class="card-price">R799</h5>
+      <button class="send_btn" type="button">See more</button>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -76,7 +100,7 @@
         </div>
       </div>
    </div>
-  
+
 </template>
 
 <script>
@@ -97,5 +121,31 @@
  width: 990px;
  margin: auto;
 }
+
+.card-group {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.card {
+  margin: 5%;
+  box-shadow: 0px 2px 2px 2px rgb(168, 162, 183);
+
+  
+ 
+  border: none;
+}
+
+.card-img-top {
+
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  text-align: center;
+}
+
 
 </style>

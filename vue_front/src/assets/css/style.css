@@ -9,36 +9,14 @@
     font-family: 'DM Serif Display', serif;
 }
 
-/*-- navigation--
+/* nav*/
+  
 
-.navbar  {
-    background: #03cafc;
-    float: right;
-    clear: both;
-    padding: 23px 25px !important;
-    border-radius: 64px;
-  }
-  
-  .navbar-dark .navbar-nav .nav-link {
-    padding: 0 20px;
-    color: #070404;
-    font-size: 17px;
-    line-height: 20px;
-    font-weight: 500;
-  }
   
   
- .navbar {
-    
-     padding: 30px 30px;
-     background: transparent;
-     position: fixed;
-     z-index: 1000;
-     border-top: white solid 13px;
-     top: 0;
-     left: 0
- }
-*/
+
+
+/*end of nav*/
 
 /*Contact*/
 
@@ -89,6 +67,24 @@ h1{
 }
 
 
+.send_btn {
+    background: rgb(22, 22, 214);
+    font-weight: 600;
+    font-size: 18px;
+    width: 25%;
+    color: #fff;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: ease-in all 0.5s;
+  
+ 
+}
+
+.send_btn:hover {
+    background: #4b4b4c;
+    transition: ease-in all 0.5s;
+}
 
   
 /*End of home*/
