@@ -64,7 +64,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-            <div class="card products-card" v-for="product in products" :key="products.id">
+            <div class="card products-card" v-for="product in products" :key="product.id">
               <img :src="products.image" class="card-img-top img-fluid" alt="">
               <div class="card-body">
                 <h5 class="card-title">{{ products.name }}</h5>
