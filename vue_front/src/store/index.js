@@ -2,7 +2,6 @@ import { createStore } from 'vuex'
 import axios from 'axios'
 const cUrl = "https://node-eomp-aqz0.onrender.com/"
 
-
 export default createStore({
   state: {
     users: null,
@@ -16,7 +15,7 @@ export default createStore({
   getters: {
   },
   mutations: {
- 
+    
     setUsers(state, users) {
       state.users = users
     },
@@ -65,5 +64,3 @@ export default createStore({
 
   
 })
-
-  
