@@ -73,28 +73,29 @@
    .contact::placeholder,
    .contact1::placeholder {
          color: #aaa;
+        
        }  
    
    .contact:focus,
    .contact1:focus {
-         border-color: #2980b9;
+    box-shadow: 0px 2px 2px 2px rgb(168, 162, 183);
        }
        
    
    .contact {
      width: 100%;
      padding: 10px;
-     border: 2px solid #3498db;
+     box-shadow: 0px 2px 2px 2px rgb(168, 162, 183);
      border-radius: 5px;
      margin-bottom: 15px;
      transition: border-color 0.3s ease;
      font-size: 16px;
-     color: #3498db;
+     
      
    }
    
    .contact1 {
-   border-bottom: blue solid ;
+  box-shadow: 0px 2px 2px 2px rgb(168, 162, 183);
    padding: 40px;
    width: 100%;
    height: 80%;
