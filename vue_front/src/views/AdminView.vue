@@ -54,7 +54,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(details, index) in users" :key="details.userID">
+            <tr v-for="details in users" :key="details.userID">
               <td>{{ details.UserID }}</td>
               <td>{{ details.firstName }}</td>
               <td>{{ details.lastName }}</td>
