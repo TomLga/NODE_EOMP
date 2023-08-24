@@ -37,49 +37,86 @@ class Product{
         });
     }
     
-    addProduct(req, res) {   
-        const query = `
-          INSERT INTO Users 
-          SET ?; 
-        `;
-      }
-    
+    addProduct(req, res) {
+      const query = `
+              INSERT INTO Products 
+              SET ?
+          `;
+      dbConfig.query(query, [req.body], (err) => {
+        if (!err) {
+          res.json({
+            status: res.statusCode,
+            msg: "Product Added ",
+          });
+        } else {
+          res.json({
+            status: res.statusCode,
+            msg: "An error occ",
+            err:err
+          });
+        }
+      });
+    }
+  
 
-      updateProduct(req, res) {
-        const prodID = req.params.id;
-        const newProd = req.body;
-        const query = `
-          UPDATE products
-          SET prodName = ?, 
-          quantity = ?, 
-          amount = ?, 
-          category = ?, 
-          prodUrl = ?
-          WHERE prodID = ?
-        `;
-        const values = [
-          newProd.prodName,
-          newProd.quantity,
-          newProd.amount,
-          newProd.category,
-          newProd.prodUrl,
-          prodID
-        ];
+      // updateProduct(req, res) {
+      //   const prodID = req.params.id;
+      //   const newProd = req.body;
+      //   const query = `
+      //     UPDATE products
+      //     SET prodName = ?, 
+      //     quantity = ?, 
+      //     amount = ?, 
+      //     category = ?, 
+      //     prodUrl = ?
+      //     WHERE prodID = ${req.params.prodID};
+
+      //   `;
+      //   const values = [
+      //     newProd.prodName,
+      //     newProd.quantity,
+      //     newProd.amount,
+      //     newProd.category,
+      //     newProd.prodUrl,
+      //     prodID
+      //   ];
         
-        dbConfig.query(query, values, (err) => {
-          if (err) {
+      //   dbConfig.query(query, values, (err) => {
+      //     if (err) {
+      //       res.json({
+      //         status: res.statusCode,
+      //         msg: "Error Updating Product",
+      //       });
+      //     } else {
+      //       res.json({
+      //         status: res.statusCode,
+      //         msg: "Product updated",
+      //       });
+      //     }
+      //   });
+      // }
+      updateProduct(req, res) {
+        const query = `
+                UPDATE Products
+                SET ? 
+                WHERE prodID = ${req.params.prodID};
+            `;
+        dbConfig.query(query, [req.body], (err) => {
+          if (!err) {
             res.json({
               status: res.statusCode,
-              msg: "Error Updating Product",
+              msg: "Product Updated! ",
             });
           } else {
             res.json({
               status: res.statusCode,
-              msg: "Product updated",
+              msg: "An error occ",
+              err:err
             });
           }
         });
       }
+    
       
 
     //   updateProduct(req, res) {
