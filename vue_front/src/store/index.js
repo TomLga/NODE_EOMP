@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-const cUrl = "https://node-eomp-aqz0.onrender.com/"
+const cUrl = "https://node-eomp-vue.onrender.com/"
 
 export default createStore({
   state: {
@@ -52,10 +52,12 @@ export default createStore({
       try {
         const { data } = (await axios.get(`${cUrl}users`));
         context.commit("setUsers", data.results); 
-      } catch (e) {
+      } catch (e) {s
         context.commit("setMsg", "error occ");
       }
     },
+
+    
 
 
   },

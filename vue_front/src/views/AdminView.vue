@@ -2,7 +2,8 @@
 <template>
     <div>
       <h2>PRODUCTS TABLE</h2>
-      <button>add Products</button>
+      <!-- <button>add Products</button> -->
+      <AddProductComp/>>
         <table class="table">
             <thead>
                 <tr>
@@ -75,6 +76,7 @@
     
     <script>
     import spinnerComp from '../components/SpinnerComp.vue';
+    import UpdateUserComp from '@/components/UpdateUserComp.vue';
     
     export default {
       computed: {
@@ -91,6 +93,7 @@
       },
       components: {
         spinnerComp,
+        UpdateUserComp
       },
     };
     </script>
