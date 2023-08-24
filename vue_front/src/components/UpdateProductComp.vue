@@ -22,48 +22,7 @@
   </template>
   
   <script>
- export default {
-    data() {
-      return {
-        products: [],
-        newProduct: {
-          id: '',
-          imageUrl: '',
-          name: '',
-          price: '',
-          category: '',
-        },
-        showModal: false, 
-    updateProductProduct() {
-        const apiAddress = '';
-        
-        fetch(apiAddress, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(this.newProduct),
-        })
-          .then(response => response.json())
-          .then(data => {
-          
-            this.users.push(data);
-            this.clearNewProductFields();
-          })
-          .catch(error => {
-            console.error('Error updating product:', error);
-          });
-      },
-      clearNewProductFields() {
-        this.newProduct.id = '';
-        this.newProduct.imageUrl = '';
-        this.newProduct.name = '';
-        this.newProduct.price = '';
-        this.newProduct.category =''
-      },
-      }
-     }
-    };
+
   </script>
   
   <style scoped>

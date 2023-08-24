@@ -31,29 +31,32 @@
   </div>
 <div class="container-fluid pt-5">
     <div class=" row px-xl-5 pb-3" id="home_icons">
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1" id="home_icons1">
             <div class="d-flex flex-column align-items-center mb-4" >
                 <h1 class="fa fa-check text-primary m-0"></h1>
                 <i class="bi bi-emoji-heart-eyes fa-10x"></i>
                 <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1" id="home_icons2">
             <div class="d-flex flex-column align-items-center mb-4">
                 <h1 class="fa fa-shipping-fast text-primary m-0"></h1>
                 <i class="bi bi-truck"></i>
                 <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1" id="home_icons3">
             <div class="d-flex flex-column align-items-center mb-4">
                 <h1 class="fa fa-shipping-fast text-primary m-0"></h1>
                 <i class="bi bi-arrow-return-left"></i>
                 <h5 class="font-weight-semi-bold m-0">10 days return</h5>
-            </div>
+              </div>
         </div>
     </div>
 </div>
+<div class="End line">
+    <hr>
+  </div>
 
 <div class="card-group">
   <div class="card">
@@ -113,14 +116,57 @@
 </script>
 
 <style>
-#home_icons{
-    height: 80px;
-    background: linear-gradient(40deg ,rgb(53, 180, 49), rgba(255, 255, 255, 0.533));
 
- width: 990px;
- margin: auto;
+#home_icons1,#home_icons2,#home_icons3{
+
+  justify-content: space-between;
+
+  height: 85px;
+  font-size: 60px;
+  box-shadow: 4px 4px 4px 4px black;
+  background: linear-gradient(360deg ,rgb(167, 85, 244), rgba(255, 255, 255, 0.533));
+  margin: auto;
+  width: 15%;
+  
+ 
+}
+#home_icons{
+  justify-content: space-between;
+  border: solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  padding: 19px;
+ 
+
 }
 
+h5{
+  font-weight:bolder;
+  color: blueviolet;
+ 
+  font-family:Georgia, 'Times New Roman', Times, serif
+  
+}
+
+/*
+ #home_icons2{
+    height: 80px;
+    justify-content: space-between;
+    box-shadow: 4px 4px 4px 4px ;
+    background: linear-gradient(40deg ,blueviolet, rgba(255, 255, 255, 0.533));
+    width: 990px;
+    margin: auto;
+}
+#home_icons3{
+    height: 80px;
+    justify-content: space-between;
+    box-shadow: 4px 4px 4px 4px ;
+    background: linear-gradient(40deg ,blueviolet, rgba(255, 255, 255, 0.533));
+    width: 990px;
+    margin: auto;
+} 
+*/
 .card-group {
   display: flex;
   justify-content: space-between;
@@ -145,6 +191,8 @@
 .card-body {
   text-align: center;
 }
-
-
+.End-line{
+border-bottom: #000 solid 1px;
+padding: 130px 0 90px 0;
+}
 </style>
