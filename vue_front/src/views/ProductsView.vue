@@ -6,9 +6,9 @@
           <div class="card" style="width: 18rem;">
             <img :src="product.prodUrl" class="card-img-top" :alt="product.name">
             <div class="card-body">
-              <h5 class="card-title">{{ product.prodName }}</h5>
-              <p class="card-text">R{{ product.amount }}</p>
-              <p class="card-text">{{ product.category }}</p>
+              <h5 style="color:black" class="card-title">{{ product.prodName }}</h5>
+              <p style="color:black" class="card-text">R{{ product.amount }}</p>
+              <p style="color:black" class="card-text">{{ product.category }}</p>
               <router-link :to="'/single/' + product.prodID" class="btn btn-primary">See more</router-link>
               <!-- <router-link :to="{ name: 'single', params: { id: product.prodID } }" class="btn btn-primary">See more</router-link> -->
             </div>
