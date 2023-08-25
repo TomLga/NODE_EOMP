@@ -1,17 +1,15 @@
 <template>
   <div>
-    <div>
-  <div>
+    <button @click="sortByProductName">Sort by Product Name</button>
+    <button @click="sortByPrice">Sort by Price</button>
+
     <div class="container">
       <div class="row">
         <div class="col">
-          <h1  style="text-decoration:underline">Products</h1>
+          <h1 style="text-decoration:underline">Products</h1>
           <div>
-            <UpdateProductComp/>
+            <UpdateProductComp />
           </div>
-      
-                    
-  
         </div>
         <div class="prodAdmin">
           <table>
@@ -27,8 +25,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="tdSize" v-for="item in product" :key="item.id">
-                <td >{{ item.prodID }}</td>
+              <tr
+                class="tdSize"
+                v-for="item in sortedProducts"
+                :key="item.prodID"
+              >
+                <td>{{ item.prodID }}</td>
                 <td>{{ item.prodName }}</td>
                 <td>{{ item.amount }}</td>
                 <td>{{ item.category }}</td>
@@ -36,11 +38,15 @@
                 <td><img class="adminImg" :src="item.prodUrl" alt="" /></td>
                 <td>
                   <div class="btnGroupUser">
-                  <button
-                    type="button" class="btn btn-primary" data-bs-toggle="modal">EDIT</button>
-              
-                  <button class="btn btn-danger">Delete</button>
-                </div>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                    >
+                      EDIT
+                    </button>
+                    <button class="btn btn-danger">Delete</button>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -48,18 +54,14 @@
         </div>
       </div>
 
-
       <!-- USER TABLE -->
       <div class="row containerUser">
         <div class="col-12">
           <h1 style="text-decoration:underline">Users</h1>
-          <UpdateUserCompVue/>
-  
+          <UpdateUserCompVue />
         </div>
-
-          <div >
+        <div>
           <table class="Usertable">
-         
             <thead>
               <tr>
                 <th>#ID</th>
@@ -81,20 +83,21 @@
                 <td>{{ item.emailAdd }}</td>
                 <td>{{ item.userPass }}</td>
                 <td>{{ item.userRole }}</td>
-                <td><img class="tableImg" :src="item.userProfile  " alt="" /></td>
+                <td><img class="tableImg" :src="item.userProfile" alt="" /></td>
                 <td>
-
                   <div class="btnGroupUser">
-
                     <div>
-                  <button
-                    type="button"  class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#editUserModal">EDIT</button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editUserModal"
+                      >
+                        EDIT
+                      </button>
+                    </div>
+                    <button class="btn btn-danger">Delete</button>
                   </div>
-
-                  <button class="btn btn-danger">Delete</button>
-
-
-                </div>
                 </td>
               </tr>
             </tbody>
@@ -103,8 +106,6 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
 </template>
 
 <script>
@@ -112,25 +113,44 @@ import UpdateProductComp from "@/components/UpdateProductComp.vue";
 import UpdateUserCompVue from "@/components/UpdateUserComp.vue";
 import AddProductComp from "@/components/AddProductComp.vue";
 import AddUser from "@/components/AddUser.vue";
-
 import axios from "axios";
+
 export default {
   components: {
-
     UpdateProductComp,
     UpdateUserCompVue,
     AddProductComp,
-    AddUser
+    AddUser,
   },
   data() {
     return {
       product: [],
       user: [],
+      ascending: true,
+      sortKey: "prodName",
     };
   },
   created() {
     this.getProducts();
     this.getUsers();
+  },
+  computed: {
+    sortedProducts() {
+      const sorted = [...this.product];
+
+      sorted.sort((a, b) => {
+        if (this.sortKey === "prodName") {
+          return this.ascending
+            ? a.prodName.localeCompare(b.prodName)
+            : b.prodName.localeCompare(a.prodName);
+        } else if (this.sortKey === "amount") {
+          return this.ascending ? a.amount - b.amount : b.amount - a.amount;
+        }
+        return 0;
+      });
+
+      return sorted;
+    },
   },
   methods: {
     async getProducts() {
@@ -144,7 +164,6 @@ export default {
         console.log(err);
       }
     },
-
     async getUsers() {
       try {
         const response = await axios.get(
@@ -156,18 +175,24 @@ export default {
         console.log(err);
       }
     },
-
-    async deleteProduct(id) {
-      try {
-        await axios.delete(`https://node-eomp-vue.onrender.com/${id}`);
-        this.getProducts();
-      } catch (err) {
-        console.log(err);
-      }
+    sortByProductName() {
+      this.ascending = !this.ascending;
+      this.sortKey = "prodName";
+    },
+    sortByPrice() {
+      this.sortKey = "amount";
+      this.ascending = !this.ascending;
     },
   },
 };
 </script>
+
+<style>
+/* Your styles here */
+</style>
+
+
+
 
 <style>
 .container{
