@@ -28,17 +28,4 @@ export default {
 </style>
 
 
-  </template>
-  
-  <script>
-  export default {
-    props: {
 
-      product: {
-        type: Object,
-        required: true
-      }
-    }
-  };
-  </script>
-  

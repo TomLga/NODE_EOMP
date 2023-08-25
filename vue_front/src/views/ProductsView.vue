@@ -1,10 +1,5 @@
 <template>
 
-
-<div class="container-fluid">
-  <button type="button">Sort</button>
-</div>
-
   <div class="container-fluid">
     <h2>Products</h2>
     <div class="row">
@@ -21,33 +16,17 @@
       </div>
     </div>
   </div>
-
-  <div class="single-product">
-   <div class="product in products" :key="product.prodID"> 
-    <div class="card" style="width: 18rem;">
-          <img :src="product.prodUrl" class="card-img-top" :alt="product.name">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.prodName }}</h5>
-            <p class="card-text">{{ product.amount }}</p>
-            <p class="card-text">{{ product.category }}</p>
-        </div>
-    </div>
-   </div>
- </div>
-
-
-
 </template>
 
 <script>
-import SpinnerComp from "@/components/SpinnerComp"; 
+import SpinnerComp from "@/components/SpinnerComp";
 
 
 export default {
   computed: {
-        products() {
-        return this.$store.state.products;
-      },
+    products() {
+      return this.$store.state.products;
+    },
       users() { 
         return this.$store.state.users;
       },
@@ -55,11 +34,23 @@ export default {
       mounted() {
         this.$store.dispatch('fetchProds');
         this.$store.dispatch('fetchUsers');
-      },
-      components: {
-        SpinnerComp,
-        
-      },
+  },
+  components: {
+    SpinnerComp,
+  },
+  methods: {
+    sortProductsByPrice() {
+      this.sortedProducts.sort((a, b) => a.amount - b.amount);
+    },
+    sortProductsByCategory() {
+      this.sortedProducts.sort((a, b) => a.category.localeCompare(b.category));
+    },
+  },
+  computed: {
+    sortedProducts() {
+      return this.products.slice(); // Make sure to provide the sorting logic here
+    },
+  },
       props: {
     product: {
       type: Object,
