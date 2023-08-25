@@ -6,7 +6,10 @@
       <div class="row">
         <div class="col">
           <h1  style="text-decoration:underline">Products</h1>
-          <button class="btn btn-success add-btn AddingMod"  data-bs-toggle="modal">Add Product</button>
+          <div>
+            <UpdateProductComp/>
+          </div>
+      
                     
   
         </div>
@@ -34,7 +37,7 @@
                 <td>
                   <div class="btnGroupUser">
                   <button
-                    type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProductModal">EDIT</button>
+                    type="button" class="btn btn-primary" data-bs-toggle="modal">EDIT</button>
               
                   <button class="btn btn-danger">Delete</button>
                 </div>
@@ -45,15 +48,18 @@
         </div>
       </div>
 
+
+      <!-- USER TABLE -->
       <div class="row containerUser">
         <div class="col-12">
           <h1 style="text-decoration:underline">Users</h1>
-          <button type="button"  class="btn btn-success AddingMod">Add</button>
+          <UpdateUserCompVue/>
   
         </div>
 
           <div >
           <table class="Usertable">
+         
             <thead>
               <tr>
                 <th>#ID</th>
@@ -61,6 +67,7 @@
                 <th>LastName</th>
                 <th>Gender</th>
                 <th>Email</th>
+                <th>Encrypt Password</th>
                 <th>Role</th>
                 <th>Image</th>
               </tr>
@@ -72,15 +79,16 @@
                 <td>{{ item.lastName }}</td>
                 <td>{{ item.gender }}</td>
                 <td>{{ item.emailAdd }}</td>
+                <td>{{ item.userPass }}</td>
                 <td>{{ item.userRole }}</td>
-                <td><img class="tableImg" :src="item.img" alt="" /></td>
+                <td><img class="tableImg" :src="item.userProfile  " alt="" /></td>
                 <td>
 
                   <div class="btnGroupUser">
 
                     <div>
                   <button
-                    type="button"  class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#editUserModal" >EDIT</button>
+                    type="button"  class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#editUserModal">EDIT</button>
                   </div>
 
                   <button class="btn btn-danger">Delete</button>
@@ -114,7 +122,6 @@ export default {
     AddProductComp,
     AddUser
   },
-  name: "admin-Comp",
   data() {
     return {
       product: [],
@@ -164,7 +171,6 @@ export default {
 
 <style>
 .container{
-border: 2px solid black ;
 justify-content: space-evenly;
 }
 
@@ -193,29 +199,32 @@ table{
 
   /* user table  */
   .containerUser{
-  
+
     margin: 20px;
     
   }
   .Usertable {
     width: 100%;
-    border-collapse: collapse;
+    margin-left: -50px;
   }
+ 
+
+
 
   .Usertable th,
   .Usertable td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
-    width: 14.28%; /* Distributing columns evenly across 7 columns */
+    width: 14.28%; 
+
   }
 
   .Usertable td img {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 80px;
+    max-height: 80px;
   }
 
-  /* This will make the table take up the whole screen height */
   .Usertable-container {
     height: 100vh;
     overflow-y: scroll;
@@ -228,6 +237,6 @@ table{
   }
 .AddingMod{
   background: #b71d1d;
-  margin-left: 50%;
+  margin-left: 0%;
 }
 </style>
