@@ -55,18 +55,39 @@
   border-radius: 30px;
   text-shadow: 4px 4px 4px white;
   transition: ease-in all 0.5s;
- 
 
-
-  
  }
-
-
-
 
 #linkName:hover {
   background: white;
   transition: ease-in all 0.5s;
 }
   </style>
+
+  <style>
+  .navbar-nav{
+    margin: auto;
+   
+    width: 600px;
+    height: 70px;
+    border-radius: 20px;
+
+  }
+  #linkName{
+    margin: auto;
+    font-size: 20px;
+  }
+  .nav-item{
+    margin: auto;
+  }
+
+  .nav-item:hover{
+    text-decoration: underline;
+    transform: scale(1.08);
+   
+    
+  }
+
+
+</style>
   

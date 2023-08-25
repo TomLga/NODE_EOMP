@@ -1,31 +1,34 @@
 <template>
-  <div class="single-product">
-    <div class="product-image">
-      <img :src="product.imageUrl" :alt="product.name">
+  <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img :src="product.prodUrl" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        {{ product.prodName }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="product-details">
-      <h3>{{ product.name }}</h3>
-      <p>Price: {{ product.price }}</p>
-      <p>Category: {{ product.category }}</p>
-      <!-- Add more details as needed -->
-    </div>
-  </div>
+    
 </template>
 
 <script>
-export default {
-  props: {
-    product: {
-      type: Object,
-      required: true
+
+    export default {
+        computed: {
+            product(){
+                return this.$store.state.product
+            }
+        },
+        created(){
+           this.$store.dispatch('fetchProduct',
+            this.$route.params.id)
+        }
     }
-  }
-};
 </script>
 
 <style scoped>
-/* Add your component's styling here */
+
 </style>
-
-
-
