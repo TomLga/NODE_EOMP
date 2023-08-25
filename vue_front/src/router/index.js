@@ -30,7 +30,13 @@ const routes = [
     name: 'contact us',
    
     component: () => import('../views/ContactView.vue')
+  },
+  {
+    path: '/single/:id',
+    name: 'single',
+    component: () => import('../components/SingleComp.vue')
   }
+  
 ]
 
 const router = createRouter({
