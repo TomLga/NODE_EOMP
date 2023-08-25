@@ -10,7 +10,9 @@
             <h5 class="card-title">{{ product.prodName }}</h5>
             <p class="card-text">{{ product.amount }}</p>
             <p class="card-text">{{ product.category }}</p>
-            <router-link :to="'/singleProduct/' + product.prodID" class="btn btn-primary">See  more </router-link>
+           
+            <router-link :to="'/single/' + product.prodID" class="btn btn-primary">See more</router-link>
+
           </div>
         </div>
       </div>
@@ -20,6 +22,7 @@
 
 <script>
 import SpinnerComp from "@/components/SpinnerComp";
+import SingleComp from "@/components/SingleComp.vue";
 
 
 export default {
@@ -37,28 +40,9 @@ export default {
   },
   components: {
     SpinnerComp,
+    SingleComp,
   },
-  methods: {
-    // sortProductsByPrice() {
-    //   this.sortedProducts.sort((a, b) => a.amount - b.amount);
-    // },
-    // sortProductsByCategory() {
-    //   this.sortedProducts.sort((a, b) => a.category.localeCompare(b.category));
-    // },
-  },
-  computed: {
-    // sortedProducts() {
-    //   return this.products.slice(); // Make sure to provide the sorting logic here
-    // },
-  },
-    //   props: {
-    // product: {
-    //   type: Object,
-    //   required: true
-    // }
-  // }
 };
-    
 </script>
 
 <style scoped>

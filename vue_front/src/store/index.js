@@ -10,7 +10,13 @@ export default createStore({
     product: null,
     spinner: false,
     token: null,
-    msg: null
+    msg: null,
+    state: {
+      product: {
+        prodUrl: '',
+      },
+    }
+    
   },
   getters: {
   },
