@@ -32,10 +32,16 @@ const routes = [
     component: () => import('../views/ContactView.vue')
   },
   {
-    path: '/single/:id',
+    path: '/Single/:prodID',
     name: 'single',
     component: () => import('../components/SingleView.vue')
-  }
+  },
+  {
+    path: '/product/:id',
+    name: 'product',
+    component: () => import('../components/SingleView.vue'), // Adjust the path as needed
+    props: true,
+  },
   
 ]
 

@@ -12,11 +12,7 @@ export default createStore({
     spinner: false,
     token: null,
     msg: null,
-    state: {
-      product: {
-        prodUrl: "",
-      },
-    },
+    message: null,
   },
   getters: {},
   mutations: {
@@ -36,16 +32,10 @@ export default createStore({
       state.spinner = value;
     },
     setToken(state, token) {
-      state.spinner = token;
+      state.token = token; // Fix typo: token assignment
     },
     setMsg(state, msg) {
       state.msg = msg;
-    },
-    setProducts(state, value) {
-      state.products = value;
-    },
-    setProduct(state, value) {
-      state.product = value;
     },
     setMessage(state, value) {
       state.message = value;
@@ -60,7 +50,6 @@ export default createStore({
         context.commit("setMsg", "error occ");
       }
     },
-
     async fetchUsers(context) {
       try {
         const { data } = await axios.get(`${cUrl}users`);
@@ -69,7 +58,6 @@ export default createStore({
         context.commit("setMsg", "error occ");
       }
     },
-
     async updateUser(context, updatedUser) {
       try {
         const response = await axios.patch(
@@ -93,7 +81,7 @@ export default createStore({
     },
     async fetchProduct(context, id) {
       try {
-        const response = await axios.get(`${cUrl}product/${id}`);
+        const response = await axios.get(`${cUrl}products/${id}`);
         const { results, err } = response.data;
         if (results) {
           context.commit("setProduct", results[0]);
