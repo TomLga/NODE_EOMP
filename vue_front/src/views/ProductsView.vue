@@ -16,10 +16,13 @@
       </div>
     </div>
   </div>
-</template>
+
 
 <script>
 import SpinnerComp from "@/components/SpinnerComp";
+
+import SingleComp from "@/components/SingleView.vue";
+
 
 
 export default {
