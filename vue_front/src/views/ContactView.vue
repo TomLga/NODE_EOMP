@@ -48,7 +48,14 @@ export default {
     },
   },
 };
+
+
 </script>
+
+
+
+
+
 
 <style scoped>
 .contact-us{
@@ -99,3 +106,4 @@ input {
   border-radius: 20px;
 }
 </style>
+
