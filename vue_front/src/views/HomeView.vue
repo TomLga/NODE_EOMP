@@ -56,11 +56,10 @@
           </div>
       </div>
   </div>
-  
-  
-  <div class="End line">
-      <hr>
-    </div> 
+  <br>
+  <br>
+ 
+ 
     
     <h2 id="ftText">Featured Products</h2>
   
@@ -69,24 +68,31 @@
       <img src="https://i.postimg.cc/cJJJLYsm/Noise-Champ.jpg" class="card-img-top" alt="kids watch" style="width: 17rem; margin:auto">
       <div class="card-body" >
         <h5 class="card-price">R150</h5>
-        <button class="seeMoreBtn" type="button">See more</button>
+        
+        <button class="seeMoreBtn" href="./ProductsView.vue" type="button">See more</button>
       </div>
     </div>
     <div class="card">
       <img src="https://i.postimg.cc/V6rLj800/Tempo-Pulse-2-0-Smart-watch.jpg" class="card-img-top" alt="womans watch" style="width: 17rem; margin:auto">
       <div class="card-body">
         <h5 class="card-price">R999</h5>
-        <button class="seeMoreBtn" type="button">See more</button>
+        <button class="seeMoreBtn" href="./ProductsView.vue" type="button">See more</button>
       </div>
     </div>
     <div class="card">
       <img src="https://i.postimg.cc/d0SVk13K/Volkano-Serene-Series.jpg" class="card-img-top" alt="mans watch" style="width: 17rem; margin:auto">
       <div class="card-body">
         <h5 class="card-price">R799</h5>
-        <button class="seeMoreBtn" type="button">See more</button>
+        <button class="seeMoreBtn" href="./ProductsView.vue" type="button">See more</button>
       </div>
     </div>
   </div> 
+
+ 
+
+
+
+
    <button id="seeAllProducts">see all products</button>
 </div>
   </template>
@@ -117,11 +123,10 @@
   }
   #home_icons{
     justify-content: space-between;
-    border: solid black;
     border-left: none;
     border-right: none;
     border-bottom: none;
-    padding: 19px;
+   
    
   
   }
@@ -176,17 +181,18 @@
   .card-body {
     text-align: center;
   }
-  .End-line{
-  border-bottom: #000 solid 1px;
-  padding: 130px 0 90px 0;
-  }
+ 
   
   
   
-  /* logan style */
+  
   #ftText{
    font-size: 60px;
    text-align: center;
+   box-shadow: 4px 4px 4px 4px blueviolet;
+   margin-top: 5rem;
+   
+   
   }
   
   #home_icons1, #home_icons2, #home_icons3{
@@ -209,7 +215,7 @@
   .seeMoreBtn{
     background: linear-gradient(rgb(0, 0, 0), rgb(143, 132, 132));
     color: white;
-    width: 120px;
+    width: 90px;
     border-radius: 20px;
   }
   
@@ -218,7 +224,7 @@
     box-shadow: 15px 15px rgba(0, 0, 0, 0.493);
   }
    #seeAllProducts{
-    margin:40px 25%;
+    
     width: 50%;
     height: 2.5rem;
     border-radius: 20px;
@@ -231,5 +237,64 @@
     text-transform: uppercase;
     
    }
+
+   h1 {
+    font-size: 5rem;
+    text-shadow: 4px 6px #edd7d7;
+    text-align: center;
+
+
+}
+
+
+
+.carousel-text {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  /* background-color: rgba(255, 255, 255, 0.377);
+*/
+background: linear-gradient(40deg ,rgb(118, 116, 226), rgba(255, 255, 255, 0.533));
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  text-align: center;
+}
+
+
+
+.bi{
+  padding: 3%;
+  
+  
+}
+
+.container-fluid {
+ justify-content: center;
+ align-items: center;
+
+}
+
+
+.send_btn {
+  background: blueviolet;
+  font-weight: 600;
+  font-size: 18px;
+  width: 25%;
+  color: #fff;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: ease-in all 0.5s;
+
+
+}
+
+.send_btn:hover {
+  background: #4b4b4c;
+  transition: ease-in all 0.5s;
+}
+
   
   </style>

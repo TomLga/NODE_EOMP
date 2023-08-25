@@ -8,6 +8,7 @@
   </div>
 </template>
 
+
 <script>
 import FooterComp from './components/FooterComp.vue';
 import NavBarComp from './components/NavBarComp.vue';
