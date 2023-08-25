@@ -34,7 +34,7 @@ const routes = [
   {
     path: '/single/:id',
     name: 'single',
-    component: () => import('../components/SingleComp.vue')
+    component: () => import('../components/SingleView.vue')
   }
   
 ]
