@@ -1,5 +1,10 @@
 <template>
 
+
+<div class="container-fluid">
+  <button type="button">Sort</button>
+</div>
+
   <div class="container-fluid">
     <h2>Products</h2>
     <div class="row">
@@ -16,6 +21,21 @@
       </div>
     </div>
   </div>
+
+  <div class="single-product">
+   <div class="product in products" :key="product.prodID"> 
+    <div class="card" style="width: 18rem;">
+          <img :src="product.prodUrl" class="card-img-top" :alt="product.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.prodName }}</h5>
+            <p class="card-text">{{ product.amount }}</p>
+            <p class="card-text">{{ product.category }}</p>
+        </div>
+    </div>
+   </div>
+ </div>
+
+
 
 </template>
 
@@ -40,7 +60,14 @@ export default {
         SpinnerComp,
         
       },
-    };
+      props: {
+    product: {
+      type: Object,
+      required: true
+    }
+  }
+};
+    
 </script>
 
 <style scoped>
