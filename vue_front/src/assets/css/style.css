@@ -44,63 +44,6 @@
 
 /*Home*/
 
-h1 {
-    font-size: 5rem;
-    text-shadow: 4px 6px #edd7d7;
-    text-align: center;
-
-
-}
-
-
-
-.carousel-text {
-  position: absolute;
-  top: 35%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-  /* background-color: rgba(255, 255, 255, 0.377);
-*/
-background: linear-gradient(40deg ,rgb(118, 116, 226), rgba(255, 255, 255, 0.533));
-  padding: 10px;
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  text-align: center;
-}
-
-
-
-.bi{
-  padding: 3%;
-  
-  
-}
-
-.container-fluid {
- justify-content: center;
- align-items: center;
-
-}
-
-
-.send_btn {
-  background: blueviolet;
-  font-weight: 600;
-  font-size: 18px;
-  width: 25%;
-  color: #fff;
-  height: 50px;
-  border-radius: 30px;
-  margin-top: 20px;
-  transition: ease-in all 0.5s;
-
-
-}
-
-.send_btn:hover {
-  background: #4b4b4c;
-  transition: ease-in all 0.5s;
-}
 
 
 
@@ -127,11 +70,6 @@ background: linear-gradient(40deg ,rgb(118, 116, 226), rgba(255, 255, 255, 0.533
   content: "";
   width: 220px;
   height: 411px;
-  right: -30px;
-  background: url();
-  background-repeat: no-repeat;
-  top: -27px;
-  z-index: -1;
 }
 
 .about .about_img figure {
@@ -155,9 +93,13 @@ background: linear-gradient(40deg ,rgb(118, 116, 226), rgba(255, 255, 255, 0.533
 }
 
 
-
-/* end about section */
-
-/*Featured*/
-
-/*End of featured*/
+@media (max-width: 585px) {
+  .card-body{
+   font-size: 10px;
+  }
+  h2{
+   font-size: 8px;
+   
+ }
+ 
+ }

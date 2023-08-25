@@ -21,8 +21,9 @@
       <input type="text" v-model="items.quantity">
       <label class="label">Image</label>
       <input type="text" v-model="items.prodURL">
-      <button class="btn btn-success add-btn AddingMod" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
-    </form>
+      <!-- <button class="btn btn-success add-btn AddingMod" type="submit">Add Product</button> -->
+      <button class="btn btn-success add-btn AddingMod" @click="saveData">Add Product</button>
+    </form> 
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -39,6 +40,13 @@ import {computed} from '@vue/runtime-core'
   export default {
     data(){
       return {
+        item: {
+        prodName: "",
+        amount: "",
+        category: "",
+        quantity: "",
+        prodURL: ""
+      },
           prodName: null,
           amount: null,
           category: null,
@@ -57,11 +65,14 @@ import {computed} from '@vue/runtime-core'
         prodURL:''
       }
 
-      let addingProduct = () => {
-        console.log(items);
-        store.dispatch('addProduct', items);
-        store.dispatch('fetchProducts');
+      let addingProduct = async () => {
+      try {
+        console.log(this.item); 
+        await store.dispatch('addProduct', this.item);
+        await store.dispatch('fetchProducts');
         location.reload();
+      } catch (error) {
+        console.error(error);
       }
 
       let products = computed(() => store.state.products)
@@ -71,10 +82,36 @@ import {computed} from '@vue/runtime-core'
         addingProduct,
         products
       }
+    }
+    
+  },
+  methods: {
+    async saveData() {
+      try {
+        await this.addingProduct();
+        $('#addProductModal').modal('hide'); // Close the modal
+        this.resetFormData();
+      } catch (error) {
+        console.error(error);
+      }
     },
+    resetFormData() {
+      this.item = {
+        prodName: "",
+        amount: "",
+        category: "",
+        quantity: "",
+        prodURL: ""
+      };}
+
+
+}}
   
-  }
+  
 </script>
+
+
+
 <style scoped>
 .form{
   display: flex;

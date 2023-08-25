@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <div class="container">
+  <div class="container-fluid ">
+    <div class="footer">
       <div class="info_logo">
         <h2>
           Time Vogue
@@ -48,7 +48,8 @@
               <a href="../views/AdminView.vue" class="btn btn-primary">Admin</a>
               <a href="../views/ProductsView.vue" class="btn btn-primary">Products</a>
               <a href="../views/ProductsView.vue" class="btn btn-primary">Products</a>
-          </div>
+           
+                  </div>
 
         <div class="col-md-3">
           <div class="info_form ">
@@ -103,7 +104,7 @@
 <style>
 
 .footer_section {
-      background-color: grey;
+      background-color: rgb(54, 22, 22);
       color: white;
       padding: 20px 0;
     }
@@ -117,4 +118,98 @@
     .footer_section a:hover {
       text-decoration: underline;
     }
+
+    .footer{
+      background:blueviolet;
+    }
+
+    .h5{
+      color:aliceblue;
+      background-color: blanchedalmond;
+    }
+     p{
+      color: aliceblue;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+     }
+
+    .container-fluid{
+      justify-content: center;
+      align-content: center;
+      align-items: baseline;
+      width: 100%;
+    }
+
+
+
+    .footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+    }
+    
+    .info_logo h2 {
+      color: white;
+    }
+    
+    .info_contact h5,
+    .info_info h5,
+    .info_form h5 {
+      color: aliceblue;
+    }
+    
+    .info_contact p,
+    .info_info p {
+      color: aliceblue;
+    }
+    
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    
+    }
+    
+    .links a {
+      color: white;
+      text-decoration: none;
+      width: fit-content;
+      margin-left: 60%;
+      
+    }
+    
+    .links a:hover {
+      text-decoration: underline;
+
+    }
+    
+    .social_box {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .footer_section {
+      background-color: blueviolet;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+
+
+
+    
+@media (max-width: 585px) {
+  .container-fluid{
+   font-size: 10px;
+  }
+  #ftText{
+   font-size: 20px;
+   
+  }
+ 
+ }
+
 </style>
