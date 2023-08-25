@@ -13,13 +13,13 @@
       <label class="label">Product Name</label>
       <input type="text">
       <label class="label">Price</label>
-      <input type="text">
+      <input type="number">
       <label class="label">Category</label>
       <input type="text">
       <label class="label">Quantity</label>
-      <input type="text">
+      <input type="number">
       <label class="label">Image</label>
-      <input type="text">
+      <input type="url">
       <button class="btn btn-success mt-3" @click="$event => updateProduct()">Update</button>
     </div>
     <div class="modal-footer">

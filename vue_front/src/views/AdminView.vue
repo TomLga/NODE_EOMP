@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col">
           <h1  style="text-decoration:underline">Products</h1>
-          <button type="button" class="btn btn-success add-btn"  data-bs-toggle="modal"   data-bs-target="#addProductModal">Add Product</button>
+          <button class="btn btn-success add-btn AddingMod"  data-bs-toggle="modal">Add Product</button>
                     
   
         </div>
@@ -32,15 +32,12 @@
                 <td>{{ item.quantity }}</td>
                 <td><img class="adminImg" :src="item.prodUrl" alt="" /></td>
                 <td>
+                  <div class="btnGroupUser">
                   <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#editProductModal"
-                  >
-                    Edit
-                  </button>
+                    type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProductModal">EDIT</button>
+              
                   <button class="btn btn-danger">Delete</button>
+                </div>
                 </td>
               </tr>
             </tbody>
@@ -51,8 +48,7 @@
       <div class="row containerUser">
         <div class="col-12">
           <h1 style="text-decoration:underline">Users</h1>
-          <button type="button"  class="btn btn-success add-btn" data-bs-toggle="modal" 
-                      data-bs-target="#addUserModal">Add</button>
+          <button type="button"  class="btn btn-success AddingMod">Add</button>
   
         </div>
 
@@ -79,15 +75,18 @@
                 <td>{{ item.userRole }}</td>
                 <td><img class="tableImg" :src="item.img" alt="" /></td>
                 <td>
+
+                  <div class="btnGroupUser">
+
+                    <div>
                   <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#editUserModal"
-                  >
-                    Edit
-                  </button>
+                    type="button"  class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#editUserModal" >EDIT</button>
+                  </div>
+
                   <button class="btn btn-danger">Delete</button>
+
+
+                </div>
                 </td>
               </tr>
             </tbody>
@@ -222,4 +221,13 @@ table{
     overflow-y: scroll;
   }
 
+  .btnGroupUser{
+    display: flex;
+    gap:10px;
+  
+  }
+.AddingMod{
+  background: #b71d1d;
+  margin-left: 50%;
+}
 </style>
