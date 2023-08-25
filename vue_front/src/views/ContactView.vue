@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container-fluid">
+    <div class=" holdign container-fluid">
       <div class="contact-us">
-        <form>
+        <form class="callBox">
           <div class="row mb-3">
             <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
@@ -27,7 +27,7 @@
               <textarea class="form-control" id="inputMessage3" rows="8"></textarea>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="submitt">Submit</button>
         </form>
       </div>
     </div>
@@ -61,10 +61,7 @@ export default {
 .contact-us{
   width: 50%;
   margin : auto;
-  
-  
 }
-
 .btn {
   background: blueviolet;
   font-weight: 600;
@@ -78,12 +75,35 @@ export default {
   transition: ease-in all 0.5s;
   text-transform: uppercase;
 
-
 }
 
 .btn:hover {
   background: #4b4b4c;
   transition: ease-in all 0.5s;
+}
+
+
+
+.callBox{
+  margin: 20px;
+  background: #615a5a;
+  color: white;
+  padding: 22px;
+  box-shadow: 5px 10px rgb(4, 4, 4);
+  
+}
+
+input {
+  margin: 15px;
+  background: #777474;
+  width: 80%;
+}
+
+.submitt{
+  background: #000000;
+  color: white;
+  width: 15rem;
+  border-radius: 20px;
 }
 </style>
 
