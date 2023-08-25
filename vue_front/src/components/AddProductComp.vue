@@ -21,7 +21,7 @@
       <input type="text" v-model="items.quantity">
       <label class="label">Image</label>
       <input type="text" v-model="items.prodURL">
-      <button class="btn btn-success mt-3" type="submit" v-on:click="addingProduct">Add</button>
+      <button class="btn btn-success add-btn AddingMod" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
     </form>
     </div>
     <div class="modal-footer">

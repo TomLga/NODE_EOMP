@@ -40,21 +40,26 @@
     </div>
   </template>
   
+
+
   <script>
   export default {
     name: 'ContactView',
-        components: {
-  
-  }
+    components: {
+      // Your components
+    },
+    methods: {
+      async fetchData() {
+      try {
+        // Fetch data
+      } catch (error) {
+        this.errorMessage = 'An error occurred while fetching data.';
+        console.error('Error:', error);
       }
-  
-  </script>
-  
- 
-
-
-
-
+    },
+  },
+};
+   
 <style >
 
   
