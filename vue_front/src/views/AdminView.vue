@@ -101,18 +101,18 @@
 </template>
 
 <script>
+import UpdateProductComp from "@/components/UpdateProductComp.vue";
+import UpdateUserCompVue from "@/components/UpdateUserComp.vue";
+import AddProductComp from "@/components/AddProductComp.vue";
+import AddUser from "@/components/AddUser.vue";
 
-import EditProduct from "../components/EditProduct.vue";
-import EditUser from "../components/EditUser.vue";
-import AddProduct from "../components/AddProduct.vue";
-import AddUser from "../components/AddUser.vue";
 import axios from "axios";
 export default {
   components: {
 
-    EditProduct,
-    EditUser,
-    AddProduct,
+    UpdateProductComp,
+    UpdateUserCompVue,
+    AddProductComp,
     AddUser
   },
   name: "admin-Comp",

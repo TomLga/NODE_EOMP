@@ -39,24 +39,24 @@ export default {
     SpinnerComp,
   },
   methods: {
-    sortProductsByPrice() {
-      this.sortedProducts.sort((a, b) => a.amount - b.amount);
-    },
-    sortProductsByCategory() {
-      this.sortedProducts.sort((a, b) => a.category.localeCompare(b.category));
-    },
+    // sortProductsByPrice() {
+    //   this.sortedProducts.sort((a, b) => a.amount - b.amount);
+    // },
+    // sortProductsByCategory() {
+    //   this.sortedProducts.sort((a, b) => a.category.localeCompare(b.category));
+    // },
   },
   computed: {
-    sortedProducts() {
-      return this.products.slice(); // Make sure to provide the sorting logic here
-    },
+    // sortedProducts() {
+    //   return this.products.slice(); // Make sure to provide the sorting logic here
+    // },
   },
-      props: {
-    product: {
-      type: Object,
-      required: true
-    }
-  }
+    //   props: {
+    // product: {
+    //   type: Object,
+    //   required: true
+    // }
+  // }
 };
     
 </script>
