@@ -48,7 +48,14 @@ export default {
     },
   },
 };
+
+
 </script>
+
+
+
+
+
 
 <style scoped>
 .contact-us{
@@ -79,3 +86,4 @@ export default {
   transition: ease-in all 0.5s;
 }
 </style>
+
