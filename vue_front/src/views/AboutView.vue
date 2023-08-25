@@ -42,4 +42,49 @@ text-shadow: 0px 3px 3px blueviolet;
 text-align: center;
 }
 
+
+.about {
+   border-bottom: #000 solid 1px;
+   padding: 130px 0 90px 0;
+ }
+ 
+ 
+ #abtImg{
+   margin-top:10%;
+ 
+   width: 35rem;
+  
+ }
+ .about .titlepage::before {
+   position: absolute;
+   content: "";
+   width: 220px;
+   height: 411px;
+   right: -30px;
+   background: url();
+   background-repeat: no-repeat;
+   top: -27px;
+   z-index: -1;
+ }
+ 
+ .about .about_img figure {
+   margin: 0;
+ }
+ 
+ .about .titlepage {
+   border: #000 solid 1px;
+   padding: 40px 40px;
+   z-index: 10018;
+   background: #fff;
+   margin-right: 40px;
+ }
+ 
+ .about .titlepage p {
+   color: #2a2a2c;
+   font-size: 17px;
+   line-height: 35px;
+   font-weight: 400;
+   padding-top: 20px;
+ }
+ 
 </style>

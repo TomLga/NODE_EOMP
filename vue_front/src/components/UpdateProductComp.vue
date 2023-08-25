@@ -50,6 +50,7 @@
         <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </div>
+    
   </div>
 </div>
 
@@ -57,6 +58,7 @@
   </div>
 </template>
 <script>
+import spinnerComp from '@/components/SpinnerComp.vue'
   export default {
   }
 </script>
