@@ -3,7 +3,7 @@
     <div>
       <h2>PRODUCTS TABLE</h2>
       <!-- <button>add Products</button> -->
-      <AddProductComp/>>
+      <AddProductComp @addProduct="addProduct"/>
         <table class="table">
             <thead>
                 <tr>
@@ -37,7 +37,7 @@
     
       <div>
         <h2>USERS TABLE</h2>
-        <button>add Users</button>
+        <AddProductComp @addProduct="addProduct" />
         <table class="table">
     
             <thead>
@@ -76,7 +76,7 @@
     
     <script>
     import spinnerComp from '../components/SpinnerComp.vue';
-    import UpdateUserComp from '@/components/UpdateUserComp.vue';
+    import AddProductComp from '../components/AddProductComp.vue';
     
     export default {
       computed: {
@@ -93,8 +93,18 @@
       },
       components: {
         spinnerComp,
-        UpdateUserComp
+        AddUserComp
       },
-    };
+      methods: {
+    async addProduct(newProduct) {
+      try {
+        const response = await this.$store.dispatch('addProduct', newProduct);
+        // Handle success or error
+      } catch (error) {
+        console.error('Error adding product:', error);
+      }
+    },
+}
+    }
     </script>
     

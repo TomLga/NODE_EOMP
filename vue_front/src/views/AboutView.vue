@@ -9,9 +9,9 @@
           </div>
           <class class="col-md-7">
              <div class="titlepage">
-                <h2>About Time Vogue</h2>
+                <h2>About Us</h2>
                 <p>Watch is a very popular and practical fashion accessory for men, women and kids. From high-end luxurious watches to reasonable regular watches, endless styles of watches are available in the market today.</p>
-                <p>Our watches are made for your wrists Crafted with Love💓 & Care . Beautifully designed at its best and are the World-class watch made for you. The Art of Watch is Here. Time changes, we don’t.</p>
+                <p>Our watches are made for your wrists Crafted with Love💜 & Care . Beautifully designed at its best and are the World-class watch made for you. The Art of Watch is Here. Time changes, we don’t.</p>
          </div>
          </class>
       </div>
@@ -34,11 +34,11 @@
 <style>
 .titlepage{
    border-radius: 0px 40px ;
-   box-shadow: inset -20px -20px blue ;
+   box-shadow: inset -20px -20px blueviolet ;
 
 }
 h2{
-text-shadow: 0px 3px 3px rgba(0, 0, 255, 0.556);
+text-shadow: 0px 3px 3px blueviolet;
 text-align: center;
 }
 

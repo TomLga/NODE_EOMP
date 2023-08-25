@@ -23,8 +23,11 @@
             <li class="nav-item">
               <router-link id="linkName" class="nav-link active" aria-current="page" to="/contact">Contact</router-link>
             </li>
-
            </ul>
+           <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+          </div>
         </div>
       </div>
     </nav>

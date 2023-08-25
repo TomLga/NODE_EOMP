@@ -48,6 +48,7 @@ export default createStore({
         context.commit("setMsg", "error occ");
       }
     },
+
     async fetchUsers(context) {
       try {
         const { data } = (await axios.get(`${cUrl}users`));
@@ -57,12 +58,32 @@ export default createStore({
       }
     },
 
+      async addProduct(context, newProduct) {
+        try {
+          const response = await axios.post(`${cUrl}products`, newProduct);
+          return response.data;
+        } catch (error) {
+          throw error;
+        }
+      },
     
-
+    
+      async updateUser(context, updatedUser) {
+        try {
+          const response = await axios.patch(`${cUrl}users/${updatedUser.userID}`, updatedUser);
+          return response.data;
+        } catch (error) {
+          throw error;
+        }
+      }
+    }
+  
 
   },
+)
   modules: {
   }
 
   
-})
+
+
