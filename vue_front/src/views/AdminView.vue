@@ -4,7 +4,7 @@
     <button @click="sortByPrice">Sort by Price</button>
 
     <div class="container">
-      <div class="row">
+      <div class="row" v-if="product">
         <div class="col">
           <h1 style="text-decoration:underline">Products</h1>
           <div>
@@ -42,10 +42,12 @@
                       type="button"
                       class="btn btn-primary"
                       data-bs-toggle="modal"
+                      data-bs-target="#editProductModal"
+                      @click="editProduct(item)"
                     >
                       EDIT
                     </button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" @click="deleteProduct(item.prodID)">Delete</button>
                   </div>
                 </td>
               </tr>
@@ -53,9 +55,13 @@
           </table>
         </div>
       </div>
+      <div v-if="$store.state.spinner" class="row">
+        <spinnerComp />
+      </div>
+      
 
       <!-- USER TABLE -->
-      <div class="row containerUser">
+      <div class="row containerUser"  v-if="user">
         <div class="col-12">
           <h1 style="text-decoration:underline">Users</h1>
           <UpdateUserCompVue />
@@ -104,6 +110,9 @@
           </table>
         </div>
       </div>
+      <div v-if="$store.state.spinner" class="row">
+        <spinnerComp />
+      </div>
     </div>
   </div>
 </template>
@@ -114,6 +123,7 @@ import UpdateUserCompVue from "@/components/UpdateUserComp.vue";
 import AddProductComp from "@/components/AddProductComp.vue";
 import AddUser from "@/components/AddUser.vue";
 import axios from "axios";
+import SpinnerComp from '@/components/SpinnerComp.vue'
 
 export default {
   components: {
@@ -121,6 +131,7 @@ export default {
     UpdateUserCompVue,
     AddProductComp,
     AddUser,
+    SpinnerComp
   },
   data() {
     return {
@@ -184,12 +195,17 @@ export default {
       this.ascending = !this.ascending;
     },
   },
+  async deleteProduct(prodID) {
+      try {
+     
+      } catch (error) {
+        console.error(error);
+      }
+    },
 };
 </script>
 
-<style>
-/* Your styles here */
-</style>
+
 
 
 
@@ -233,9 +249,6 @@ table{
     margin-left: -50px;
   }
  
-
-
-
   .Usertable th,
   .Usertable td {
     padding: 10px;
