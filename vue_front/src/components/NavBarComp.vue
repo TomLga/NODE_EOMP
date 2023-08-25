@@ -24,10 +24,12 @@
               <router-link id="linkName" class="nav-link active" aria-current="page" to="/contact">Contact</router-link>
             </li>
            </ul>
-           <div class="input-group">
+
+           <div  id="serachBar" class="input-group">
           <input type="text" class="form-control" placeholder="Search">
             <button class="btn btn-outline-secondary" type="button">Search</button>
           </div>
+
         </div>
       </div>
     </nav>
@@ -41,6 +43,12 @@
   </script>
   
   <style scoped>
+
+#serachBar>input{
+  background: #a49d9d;
+}
+
+
  img{
   margin-left: 0%;
  }

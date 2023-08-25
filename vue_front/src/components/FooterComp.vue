@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="footer">
       <div class="info_logo">
         <h2>
@@ -48,7 +48,8 @@
               <a href="../views/AdminView.vue" class="btn btn-primary">Admin</a>
               <a href="../views/ProductsView.vue" class="btn btn-primary">Products</a>
               <a href="../views/ProductsView.vue" class="btn btn-primary">Products</a>
-          </div>
+           
+                  </div>
 
         <div class="col-md-3">
           <div class="info_form ">
@@ -136,6 +137,7 @@
       justify-content: center;
       align-content: center;
       align-items: baseline;
+      width: 100%;
     }
 
 
@@ -194,4 +196,20 @@
       text-align: center;
       padding: 20px 0;
     }
+
+
+
+
+    
+@media (max-width: 585px) {
+  .container-fluid{
+   font-size: 10px;
+  }
+  #ftText{
+   font-size: 20px;
+   
+  }
+ 
+ }
+
 </style>

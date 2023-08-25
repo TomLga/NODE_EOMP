@@ -70,11 +70,6 @@
   content: "";
   width: 220px;
   height: 411px;
-  right: -30px;
-  background: url();
-  background-repeat: no-repeat;
-  top: -27px;
-  z-index: -1;
 }
 
 .about .about_img figure {
@@ -98,9 +93,13 @@
 }
 
 
-
-/* end about section */
-
-/*Featured*/
-
-/*End of featured*/
+@media (max-width: 585px) {
+  .card-body{
+   font-size: 10px;
+  }
+  h2{
+   font-size: 8px;
+   
+ }
+ 
+ }
