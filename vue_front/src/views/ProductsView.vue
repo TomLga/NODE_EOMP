@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <h2>Products</h2>
     <div class="row">
-      <div class="col-4" v-for="product in "products  :key="product.prodID">
+      <div class="col-4" v-for="product in products" :key="product.prodID">
         <div class="card" style="width: 18rem;">
           <img :src="product.prodUrl" class="card-img-top" :alt="product.name">
           <div class="card-body">
@@ -21,13 +21,13 @@
     </div>
   </div>
   </div>
-<template/>
+</template>
 
 
 <script>
 
 import SpinnerComp from "@/components/SpinnerComp";
-import SingleComp from "@/components/SingleComp.vue";
+import SingleComp from "@/components/SingleView.vue";
 
 
 export default {
