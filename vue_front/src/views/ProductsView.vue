@@ -1,41 +1,31 @@
 
-
 <template>
-<div>
   <div class="container-fluid">
     <h2>Products</h2>
     <div class="row">
-      <div class="col-4" v-for="product in "products  :key="product.prodID">
+      <div class="col-4" v-for="product in products" :key="product.prodID">
         <div class="card" style="width: 18rem;">
           <img :src="product.prodUrl" class="card-img-top" :alt="product.name">
           <div class="card-body">
-            <h5 class="card-title">{{ product.prodName }}</h5>
-            <p class="card-text">{{ product.amount }}</p>
-            <p class="card-text">{{ product.category }}</p>
-           
+            <h5 class="card-title">R{{ product.prodName }}</h5>
+            <p class="card-text">R{{ product.amount }}</p>
+            <p class="card-text">R{{ product.category }}</p>
             <router-link :to="'/single/' + product.prodID" class="btn btn-primary">See more</router-link>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
-<template/>
-
-
+</template>
 <script>
-
 import SpinnerComp from "@/components/SpinnerComp";
-import SingleComp from "@/components/SingleComp.vue";
-
-
+import SingleComp from "@/components/SingleView.vue";
 export default {
   computed: {
     products() {
       return this.$store.state.products;
     },
-      users() { 
+      users() {
         return this.$store.state.users;
       },
       },
@@ -46,10 +36,8 @@ export default {
   components: {
     SpinnerComp,
     SingleComp,
+  
   },
-};
-</script> 
+}
 
-<style scoped>
-
-</style>
+</script>
